@@ -1,0 +1,64 @@
+form {
+    .form-group {
+        position: relative;
+
+        &:nth-last-of-type(1n+2) {
+            margin-bottom: 10px;
+        }
+
+        >label {
+            display: block;
+            .required {
+                font-family: $header-font;
+                color: $red;
+                margin-left: 3px;
+            }
+
+            input[type="text"],input[type="number"] {
+                display: block;
+                margin-top: 5px;
+                width: 100%;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                padding: 5px;
+                transition: box-shadow .2s;
+
+                &:focus {
+                    box-shadow: 0 0 0 0.2rem rgba($red, .25)
+                }
+            }
+
+            >label{
+                &.checkbox{
+                    margin-top: 5px;
+                    display: block;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .error-message {
+            position: absolute;
+            right: 0;
+            top: 90%;
+            background-color: rgba($red, .9);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 7px;
+            animation: slide-down .3s;
+        }
+    }
+
+    .form-btns-ctrl {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        .btn {
+            &:nth-last-of-type(1n+2) {
+                margin-right: 10px;
+            }
+        }
+    }
+}

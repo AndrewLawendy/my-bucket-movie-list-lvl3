@@ -1,0 +1,4 @@
+export const LOADING_TOGGLE = 'LOADING_TOGGLE';
+export const UPDATE_MOVIES = 'UPDATE_MOVIES';
+export const GET_CATEGORIES = 'GET_CATEGORIES';
+export const MODAL_TOGGLE = 'MODAL_TOGGLE';

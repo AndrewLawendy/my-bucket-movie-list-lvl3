@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: url(../assets/cinema-clap-yellow.jpg) no-repeat;
+    background-attachment: fixed;
+
+    h1,
+    h2 {
+        font-family: $header-font;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin: 12px 0;
+    }
+
+    h2 {
+
+        font-size: 2rem;
+        margin: 12px 0;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        margin: 8px 0;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 12px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    .text-shadow {
+        text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000
+    }
+
+    .btn {
+        padding: 10px;
+        color: #fff;
+        border-radius: 7px;
+        font-weight: bold;
+        transition: background-color .2s;
+
+        &[disabled] {
+            opacity: .6;
+            cursor: not-allowed;
+        }
+
+        &.btn-green {
+            background-color: $green;
+
+            &:not([disabled]) {
+                &:hover {
+                    background-color: darken($green, 10);
+                }
+
+                &:active {
+                    background-color: darken($green, 25);
+                }
+            }
+        }
+
+        &.btn-red {
+            background-color: $red;
+
+            &:not([disabled]) {
+                &:hover {
+                    background-color: darken($red, 10);
+                }
+
+                &:active {
+                    background-color: darken($red, 25);
+                }
+            }
+        }
+    }
+
+    .container {
+        margin: 0 auto;
+        max-width: 1030px;
+        padding: 15px;
+    }
+
+}

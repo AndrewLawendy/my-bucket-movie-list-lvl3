@@ -1,0 +1,63 @@
+@import 'variables';
+
+#modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 45px 0;
+    background-color: rgba(0, 0, 0, .7);
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 1;
+    animation: fade-in .5s;
+    z-index: 9;
+
+    #modal-body {
+        animation: slide-down .8s;
+        position: relative;
+        padding: 15px;
+        border-radius: 7px;
+        background: url(../assets/side-pop-yellow.jpg) 100% / cover;
+        width: 700px;
+        padding: 15px 30px 20px 230px;
+        opacity: 1;
+
+        #modal-close {
+            $height: 1.2rem;
+            position: absolute;
+            top: 0;
+            right: 4px;
+            font-weight: bold;
+            padding: 5px;
+            font-size: $height;
+            line-height: $height;
+            font-family: $header-font;
+            transition: color .15s;
+
+            &:hover{
+                color: $red;
+            }
+        }
+
+        h2:first-of-type {
+            color: #fff;
+            text-align: center;
+        }
+    }
+
+    &.fade-out {
+        opacity: 0;
+        transition: opacity .3s;
+
+        #modal-body {
+            transform: translate3d(0, -20px, 0);
+            opacity: 0;
+            transition: all .3s;
+        }
+    }
+}

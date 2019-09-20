@@ -1,0 +1,32 @@
+#movie-list-container {
+    margin: 15px 0;
+
+    .container {
+        background-color: rgba($red, .9);
+        border-radius: 7px;
+
+        #loading {
+            text-align: center;
+            font-family: $header-font;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        #movie-list {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -15px;
+
+            li {
+                flex-basis: 25%;
+                padding: 15px;
+                opacity: 0;
+                animation: slide-down .8s forwards;
+
+                @import 'movie-card';
+            }
+
+        }
+
+    }
+}
