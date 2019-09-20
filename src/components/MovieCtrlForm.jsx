@@ -44,7 +44,7 @@ function MovieCtrlForm(props) {
     isTouched,
   } = FromValidation((movieState || initState), isMovieCtrlFormInputValid);
   const {
-    title, year, budget,
+    title, year, budget, category_ids: categoryIds,
   } = state;
   const {
     title: errorTitle, year: errorYear, budget: errorBudget, category_ids: categoriesError,
@@ -92,7 +92,7 @@ function MovieCtrlForm(props) {
             {
               categories.map((cat) => (
                 <label htmlFor={`${cat.title}-${cat.id}`} key={cat.id} className="checkbox">
-                  <input type="checkbox" name="category_ids" value={cat.id} id={`${cat.title}-${cat.id}`} onChange={handleChange} />
+                  <input type="checkbox" name="category_ids" checked={categoryIds.includes(cat.id)} value={cat.id} id={`${cat.title}-${cat.id}`} onChange={handleChange} />
                   {cat.title}
                 </label>
               ))

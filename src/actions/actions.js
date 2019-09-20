@@ -15,11 +15,11 @@ const updateMovies = (movies) => ({
 });
 
 
-export const getAllMovies = () => async (dispatch) => {
-  dispatch(toggleLoading(true));
-  getAllMoviesService().then((newMovies) => {
+export const getAllMovies = (name) => async (dispatch) => {
+  if (name === undefined) dispatch(toggleLoading(true));
+  getAllMoviesService(name).then((newMovies) => {
     dispatch(updateMovies(newMovies));
-    dispatch(toggleLoading(false));
+    if (name === undefined) dispatch(toggleLoading(false));
   });
 };
 

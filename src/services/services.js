@@ -8,8 +8,8 @@ export const fetchPosters = async (movie) => {
   return '';
 };
 
-export const getAllMoviesService = async () => {
-  const response = await fetch('https://frontend-recruitment-challenge.herokuapp.com/movies').then((res) => res.json());
+export const getAllMoviesService = async (name) => {
+  const response = await fetch(`https://frontend-recruitment-challenge.herokuapp.com/movies?search=${name || ''}`).then((res) => res.json());
   const posters = await Promise.all(response.map((movie) => fetchPosters(movie)));
   const newCards = response.map((card, index) => ({ ...card, poster: posters[index] }));
   return newCards;
